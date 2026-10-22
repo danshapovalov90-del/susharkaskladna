@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Вертикальна сушарка для одягу — 990 грн, оплата при отриманні</title>
+<title>Вертикальна сушарка для одягу — 1290 грн, оплата при отриманні</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&subset=cyrillic,cyrillic-ext&display=swap" rel="stylesheet">
@@ -409,15 +409,15 @@ fbq('track','PageView');
     <div class="order" id="order">
       <div class="pricebar">
         <div class="old">Звичайна ціна:<s>1980 грн</s></div>
-        <div class="new"><span class="tag">Вигідна пропозиція</span><small>Акційна ціна:</small><strong>990 грн</strong></div>
+        <div class="new"><span class="tag">Вигідна пропозиція</span><small>Акційна ціна:</small><strong>1290 грн</strong></div>
       </div>
       <form class="order-form" novalidate>
         <div class="fld">
           <label for="qty-a">Кількість</label>
           <select id="qty-a" name="qty" data-sync="qty">
-            <option value="1">1 шт — 990 грн</option>
-            <option value="2">2 шт — 1 980 грн</option>
-            <option value="3">3 шт — 2 970 грн</option>
+            <option value="1">1 шт — 1290 грн</option>
+            <option value="2">2 шт — 2 580 грн</option>
+            <option value="3">3 шт — 3 870 грн</option>
           </select>
         </div>
         <div class="fld">
@@ -431,7 +431,7 @@ fbq('track','PageView');
         <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
         <button class="cta" type="submit">Замовити зараз</button>
         <div class="err" data-err="form" role="alert" style="text-align:center;margin-top:8px"></div>
-        <p class="total">До сплати при отриманні: <b data-total>990 грн</b></p>
+        <p class="total">До сплати при отриманні: <b data-total>1290 грн</b></p>
       </form>
     </div>
   </section>
@@ -571,15 +571,15 @@ fbq('track','PageView');
     <div class="box">
       <div class="pricebar">
         <div class="old">Звичайна ціна:<s>1980 грн</s></div>
-        <div class="new"><span class="tag">Вигідна пропозиція</span><small>Акційна ціна:</small><strong>990 грн</strong></div>
+        <div class="new"><span class="tag">Вигідна пропозиція</span><small>Акційна ціна:</small><strong>1290 грн</strong></div>
       </div>
       <form class="order-form" novalidate>
         <div class="fld">
           <label for="qty-b">Кількість</label>
           <select id="qty-b" name="qty" data-sync="qty">
-            <option value="1">1 шт — 990 грн</option>
-            <option value="2">2 шт — 1 980 грн</option>
-            <option value="3">3 шт — 2 970 грн</option>
+            <option value="1">1 шт — 1290 грн</option>
+            <option value="2">2 шт — 2 580 грн</option>
+            <option value="3">3 шт — 3 870 грн</option>
           </select>
         </div>
         <div class="fld">
@@ -593,7 +593,7 @@ fbq('track','PageView');
         <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
         <button class="cta" type="submit">Замовити зараз</button>
         <div class="err" data-err="form" role="alert" style="text-align:center;margin-top:8px"></div>
-        <p class="total">До сплати при отриманні: <b data-total>990 грн</b></p>
+        <p class="total">До сплати при отриманні: <b data-total>1290 грн</b></p>
         <p class="stock">Залишилося: <b id="stock">9</b> сушарок по акції!</p>
       </form>
     </div>
@@ -608,7 +608,7 @@ fbq('track','PageView');
 
 <script>
 (function(){
-  var PRICE = 990;
+  var PRICE = 1290;
   var STOCK = 9;          // оновлюйте реальним залишком
   var ENDPOINT = '/.netlify/functions/order';   // серверна функція, що передає заявку в LP-CRM
   var UTM = {};
@@ -682,7 +682,7 @@ fbq('track','PageView');
             '<p>Заявку прийнято. Менеджер зателефонує за номером ' + payload.phone.replace(/[<>&"]/g,'') + ' найближчим часом.</p></div>';
           done = true; updateSticky();
           try {
-            if (window.fbq) fbq('track', 'Lead', {value: PRICE * payload.qty, currency: 'UAH', content_name: 'Сушарка 3-ярусна', num_items: payload.qty});
+            if (window.fbq) fbq('track', 'Purchase', {value: PRICE * payload.qty, currency: 'UAH', content_type: 'product', num_items: payload.qty});
           } catch(_){}
         })
         .catch(function(){
