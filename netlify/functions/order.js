@@ -4,7 +4,7 @@
 //   LPCRM_PRODUCT_ID  – ID товару в каталозі LP-CRM               (обов'язково)
 //   LPCRM_OFFICE      – ID відділу (за замовчуванням 1)
 //   LPCRM_HOST        – адреса кабінету (за замовчуванням kiloradar.lp-crm.biz)
-//   PRICE             – ціна за одиницю, грн (за замовчуванням 990)
+//   PRICE             – ціна за одиницю, грн (за замовчуванням 1290)
 
 const PRODUCT_NAME = 'Складна 3-ярусна сушарка на коліщатках';
 
@@ -68,7 +68,7 @@ exports.handler = async (event) => {
   }
   const host = process.env.LPCRM_HOST || 'kiloradar.lp-crm.biz';
   const office = process.env.LPCRM_OFFICE || '1';
-  const price = String(process.env.PRICE || 990); // ціну беремо тільки на сервері
+  const price = String(process.env.PRICE || 1290); // ціну беремо тільки на сервері
 
   const products = [{ product_id: String(productId), price, count: String(qty) }];
   const h = event.headers || {};
